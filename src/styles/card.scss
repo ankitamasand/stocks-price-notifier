@@ -1,0 +1,61 @@
+@import "./colors.scss";
+
+.card {
+  background-color: $color-greyLighter;
+  border: 1px solid $color-greyLight;
+  border-radius: 6px;
+}
+
+.card-container {
+  width: 900px;
+  margin: 0 auto;
+  padding: 10px;
+
+  .card-title {
+    margin-right: 1px;
+  
+    .company-name {
+      font-size: 30px;
+      padding-right: 5px;
+      vertical-align: middle;
+    }
+
+    .bell {
+      display: block;
+      float: right;
+      cursor: pointer;
+      font-size: 30px;
+    
+      &.disabled {
+        color: $color-greyLight;
+      }
+    }
+  }
+
+  .metrics {
+    display: flex;
+    flex-direction: row;
+    color: $color-greyDark;
+    font-size: 15px;
+
+    .metrics-row {
+      padding: 10px 0px;
+      margin-right: 40px;
+
+      .metrics-row--value {
+        color: $color-greyDarkest;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .timeseries-btn {
+    border-color: $color-black;
+    color: $color-black;
+    &:hover {
+      background-color: $color-black;
+      color: $color-white;
+      border-color: $color-black;
+    }
+  }
+}

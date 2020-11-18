@@ -1,0 +1,37 @@
+@import "./colors.scss";
+
+.popover-custom {
+  .popover {
+    font-family: 'Montserrat';
+    display:flex;
+    flex-wrap: wrap;
+    border: 2px solid $color-black;
+    margin: auto;
+    padding: 10px;
+
+    &-close {
+      cursor: pointer;
+      float: right;
+      color: $color-greyDarker;
+    }
+  }
+
+  .already-subscribed {
+    background-color: #dddddd;
+    padding: 10px;
+    margin: 10px 0px;
+  }
+
+  .submit-button {
+      margin: 10px;
+      width: 40%;
+      border-color: $color-black;
+      color: $color-black;
+      &:hover {
+        background-color: $color-black;
+        color: $color-white;
+        border-color: $color-black;
+      }
+  }
+}
+  

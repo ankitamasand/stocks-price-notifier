@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { ApolloProvider, useMutation } from '@apollo/react-hooks';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import apolloClient from './apolloClient';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.scss';
+import * as serviceWorker from './serviceWorker';
+import { subscriptionMutation } from './queries';
+
+const Wrapper = () => {
+  const [insertSubscription] = useMutation(subscriptionMutation);
+  useEffect(() => {
+    serviceWorker.register(insertSubscription);
+  }, [])
+  return (
+    <App />
+  )
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ApolloProvider client={apolloClient}>
+    <Wrapper />
+  </ApolloProvider>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
