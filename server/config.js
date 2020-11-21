@@ -12,7 +12,8 @@ const config = {
     key: '<API_KEY>',
     timeSeriesFunction: 'TIME_SERIES_INTRADAY',
     interval: '5min'
-  }
+  },
+  graphqlURL: '<GRAPHQL_URL>'
 };
 
 const getConfig = (key) => {
